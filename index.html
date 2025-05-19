@@ -8,14 +8,16 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <link rel="stylesheet" href="asNprCreateAccount.css" type="text/css">
     <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0Hbb3x0Saw7MOWWYG6VhW9cAVFTrRCP98tcta6V5me9_hPX68uGZXI73d_NZWX_Y-mEIyL1agv0d36jHhRP2s4792jZIaawoVfCNjEY3dvG8-lZ__OxNBnElyOQCuEd9Nj8Jap1GmcTKEEbMBOVu1jWxVmjYm9eu7hOE2tJWdBApJiYbXwKff5LBCZZN5/s16000/A.png.png" type="image/x-icon">
-    <!-- Custom JavaScript -->
-    <script src="asNprCreateAccount.js" type="text/javascript"></script>
-    <script src="asNprSDKConfig.js" type="text/javascript"></script>
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js"></script>
-    <!-- Firebase App (সবার আগে থাকা দরকার) -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <!-- Custom JavaScript -->
+    <!-- <script src="asNprCreateAccount.js" type="text/javascript"></script> -->
+    <script src="asNprFbAccount.js" type="text/javascript"></script>
+    <script src="asNprGoogleAccountUser.js" type="text/javascript"></script>
+    <script src="asNprAppleAccountUser.js" type="text/javascript"></script>
+    <script src="asNprSDKConfig.js" type="text/javascript"></script>
     <meta name="author" content="newspaperreports.com">
     <title>Create an account - Newspaper Reports</title>
 </head>
@@ -132,14 +134,14 @@
                         <div class="social">
                             <div class="providers d-flex">
                                 <div class="provider_buttons">
-                                    <a href="#" target="_parent" class="primary_provider provider_facebook">
+                                    <a href="javascript:void(0);" target="_parent" class="primary_provider provider_facebook">
                                         <span class="provider_label">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34" aria-label="Facebook Icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" class="provider_icon fb_icon" aria-label="Facebook Icon">
                                                 <circle cx="12" cy="12" r="12" fill="#1877F2" />
                                                 <path fill="#FFFFFF" d="M15.12 8.25h-1.56c-.2 0-.56.27-.56.79v1.19h2.12l-.28 2.25h-1.84V18h-2.31v-5.52H9.38V10.2h1.59V8.91c0-1.63.93-2.91 3.02-2.91.61 0 1.25.06 1.62.12v2.13z"></path>
                                             </svg>
                                         </span>
-                                        <span class="provider_author">
+                                        <span class="provider_auth">
                                             <font class="provider_nm">
                                                 Facebook
                                             </font>
@@ -147,13 +149,13 @@
                                     </a>
                                 </div>
                                 <div class="provider_buttons">
-                                    <a href="#" target="_parent" class="primary_provider provider_google">
+                                    <a href="javascript:void(0);" onclick="googleLogin()" target="_parent" class="primary_provider provider_google">
                                         <span class="provider_label">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" x="0px" y="0px" viewBox="0 0 48 48" aria-label="Google Icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" x="0px" y="0px" viewBox="0 0 48 48" class="provider_icon google_icon" aria-label="Google Icon">
                                                 <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
                                             </svg>
                                         </span>
-                                        <span class="provider_author">
+                                        <span class="provider_auth">
                                             <font class="provider_nm">
                                                 Google
                                             </font>
@@ -161,13 +163,13 @@
                                     </a>
                                 </div>
                                 <div class="provider_buttons">
-                                    <a href="#" target="_parent" class="primary_provider provider_apple">
+                                    <a href="javascript:void(0);" onclick="appleLogin()" target="_parent" class="primary_provider provider_apple">
                                         <span class="provider_label">
-                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="34" height="34" viewBox="0 0 50 50">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" x="0px" y="0px" viewBox="0 0 50 50" class="provider_icon apple_icon">
                                                 <path d="M 44.527344 34.75 C 43.449219 37.144531 42.929688 38.214844 41.542969 40.328125 C 39.601563 43.28125 36.863281 46.96875 33.480469 46.992188 C 30.46875 47.019531 29.691406 45.027344 25.601563 45.0625 C 21.515625 45.082031 20.664063 47.03125 17.648438 47 C 14.261719 46.96875 11.671875 43.648438 9.730469 40.699219 C 4.300781 32.429688 3.726563 22.734375 7.082031 17.578125 C 9.457031 13.921875 13.210938 11.773438 16.738281 11.773438 C 20.332031 11.773438 22.589844 13.746094 25.558594 13.746094 C 28.441406 13.746094 30.195313 11.769531 34.351563 11.769531 C 37.492188 11.769531 40.8125 13.480469 43.1875 16.433594 C 35.421875 20.691406 36.683594 31.78125 44.527344 34.75 Z M 31.195313 8.46875 C 32.707031 6.527344 33.855469 3.789063 33.4375 1 C 30.972656 1.167969 28.089844 2.742188 26.40625 4.78125 C 24.878906 6.640625 23.613281 9.398438 24.105469 12.066406 C 26.796875 12.152344 29.582031 10.546875 31.195313 8.46875 Z"></path>
                                             </svg>
                                         </span>
-                                        <span class="provider_author">
+                                        <span class="provider_auth">
                                             <font class="provider_nm">
                                                 Apple
                                             </font>
@@ -186,11 +188,11 @@
                     <!-- Start User Register Form -->
                     <div class="asNpr_form_container form_container">
                         <div class="registration-container">
-                            <!-- <div class="registration-header">
-                                <h1 class="registration-title">নতুন অ্যাকাউন্ট তৈরি করুন</h1>
-                                <p class="registration-description">আমাদের পরিষেবা ব্যবহার করতে নিবন্ধন করুন</p>
-                            </div> -->
-                            <form class="registration-form" action="" method="post">
+                            <div class="registration-header">
+                                <!-- <h1 class="registration-title">নতুন অ্যাকাউন্ট তৈরি করুন</h1> -->
+                                <p class="registration-description">All fields are required.</p>
+                            </div>
+                            <form class="registration-form" action="" method="post" onsubmit="">
                                 <div class="name-fields">
                                     <div class="form-group">
                                         <label for="user-firstname" class="form-label form-label-required">First name</label>
@@ -237,29 +239,33 @@
                                 
                                 <div class="form-group form-group-full">
                                     <label for="user-address" class="form-label">Address</label>
-                                    <textarea id="user-address" name="user_address" class="form-control" rows="3"></textarea>
+                                    <textarea id="user-address" maxlength="250" name="user_address" class="form-control" rows="3"></textarea>
                                 </div>
                                 
                                 <div class="form-check form-group-full">
-                                    <input type="checkbox" id="user-terms" name="user_terms" class="form-check-input" required>
+                                    <input type="checkbox" id="user-terms-1" name="user_terms" class="form-check-input" required checked>
                                     <label for="user-terms" class="form-check-label">You are confirming that you are a human being, of legal age where you live, and agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>
                                 </div>
                                 <div class="form-check form-group-full">
-                                    <input type="checkbox" id="user-terms" name="user_terms" class="form-check-input" required>
+                                    <input type="checkbox" id="user-terms-2" name="user_terms" class="form-check-input" required checked>
                                     <label for="user-terms" class="form-check-label">You consent to the tracking and sharing of information about the videos you watch with third parties, in accordance with our <a href="#">Video Viewing Policy.</a></label>
                                 </div>
                                 <div class="form-check form-group-full">
-                                    <input type="checkbox" id="user-terms" name="user_terms" class="form-check-input" required>
+                                    <input type="checkbox" id="user-terms-3" name="user_terms" class="form-check-input" required checked>
                                     <label for="user-terms" class="form-check-label">You agree to receive promotional emails and special offers from us and our <a href="#">Partners.</a></label>
                                 </div>
                                 
                                 <button type="submit" class="submit-btn">Create Account</button>
                                 
                                 <div class="login-link">
-                                    <a href="#">Already have a subscription? <span>Let's activate your account</span></a>
+                                    <a href="javascript:void(0);">
+                                        Already have a subscription? <span>Let's activate your account</span>
+                                    </a>
                                 </div>
                                 <div class="login-link signin_link">
-                                    <a href="#">Already have an account? <span>Sign in</span></a>
+                                    <a href="https://newspaperreports.github.io/login/">
+                                        Already have an account? <span>Sign in</span>
+                                    </a>
                                 </div>
                             </form>
                         </div>
