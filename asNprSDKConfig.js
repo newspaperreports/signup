@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const address = document.getElementById("user-address").value.trim();
 
     // ✅ ১: পাসওয়ার্ড শক্তি চেক
-    if (password.length < 6) {
+    if (password.length < 8) {
       alert("Password must be at least 8 characters long!");
       return;
     }
