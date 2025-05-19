@@ -365,9 +365,9 @@ a {
     text-decoration: underline;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 520px) {
     .page {
-        padding: 10px;
+        padding: 20px;
     }
 
     .headline,
